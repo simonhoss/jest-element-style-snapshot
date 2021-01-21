@@ -1,0 +1,16 @@
+{
+  "name": "jest-element-style-snapshot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/puppeteer": "^5.4.2",
+    "fs-extra": "^9.1.0",
+    "json-diff": "^0.5.4",
+    "lodash.kebabcase": "^4.1.1",
+    "mkdirp": "^1.0.4"
+  }
+}
