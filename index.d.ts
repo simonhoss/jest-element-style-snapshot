@@ -1,7 +1,7 @@
-import type { Page } from "puppeteer";
+import type { JSEvalable } from "puppeteer";
 
 export function toMatchElementStyleSnapshotFromPage(
-  page: Page
+  page: JSEvalable
 ): { message(): string; pass: boolean };
 
 export function configureToMatchElementStyleSnapshotFromPage(): () => {
@@ -12,7 +12,7 @@ export function configureToMatchElementStyleSnapshotFromPage(): () => {
 declare global {
   namespace jest {
     interface Matchers<R, T> {
-      toMatchElementStyleSnapshotFromPage(page: Page): R;
+      toMatchElementStyleSnapshotFromPage(page: JSEvalable): R;
     }
   }
 }
