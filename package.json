@@ -6,6 +6,15 @@
   "types": "index.d.ts",
   "author": "Simon Hoss",
   "license": "MIT",
+  "keywords": [
+    "jest",
+    "puppeteer",
+    "integration",
+    "visual",
+    "regression",
+    "test",
+    "snapshot"
+  ],
   "repository": {
     "url": "https://github.com/simonhoss/jest-element-style-snapshot"
   },
