@@ -10,16 +10,16 @@ const timesCalled = new Map();
 async function getElementSnapshot(element, page) {
   const { style, attributes, tagName } = await page.evaluate((e) => {
     // creating an empty dummy object to compare with
-    var dummy = document.createElement("element-" + new Date().getTime());
+    const dummy = document.createElement("element-" + new Date().getTime());
     document.body.appendChild(dummy);
 
     // getting computed styles for both elements
-    var defaultStyles = getComputedStyle(dummy);
-    var elementStyles = getComputedStyle(e);
+    const defaultStyles = getComputedStyle(dummy);
+    const elementStyles = getComputedStyle(e);
 
     // calculating the difference
-    var diff = {};
-    for (var key in elementStyles) {
+    const diff = {};
+    for (let key in elementStyles) {
       if (
         elementStyles.hasOwnProperty(key) &&
         defaultStyles[key] !== elementStyles[key]
@@ -30,9 +30,9 @@ async function getElementSnapshot(element, page) {
 
     dummy.remove();
 
-    var attributeNames = e.getAttributeNames();
-    var attributes = {};
-    for (var i = 0; i < attributeNames.length; i++) {
+    const attributeNames = e.getAttributeNames();
+    const attributes = {};
+    for (let i = 0; i < attributeNames.length; i++) {
       attributes[attributeNames[i]] = e.getAttribute(attributeNames[i]);
     }
 
@@ -46,7 +46,6 @@ async function getElementSnapshot(element, page) {
 
 async function walkElement(element, page, subElementsSnapshot) {
   const subElements = await element.$$(":scope > *");
-  console.log(subElements.length);
   for (const subElement of subElements) {
     const _subElementsSnapshot = [];
     subElementsSnapshot.push({
@@ -82,7 +81,7 @@ export function configureToMatchElementStyleSnapshotFromPage() {
       const retryTimes = parseInt(global[Symbol.for("RETRY_TIMES")], 10) || 0;
 
       const subElementsSnapshot = [];
-      var elementTree = {
+      const elementTree = {
         element: await getElementSnapshot(element, page),
         subElements: subElementsSnapshot,
       };
