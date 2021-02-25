@@ -1,6 +1,6 @@
 {
   "name": "jest-element-style-snapshot",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A visual testing tool for jest and puppeteer",
   "main": "index.js",
   "types": "index.d.ts",
