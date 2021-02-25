@@ -74,7 +74,7 @@ function createSnapshotIdentifier({ retryTimes, testPath, currentTestName }) {
   return snapshotIdentifier;
 }
 
-export function configureToMatchElementStyleSnapshotFromPage() {
+function configureToMatchElementStyleSnapshotFromPage() {
   return {
     async toMatchElementStyleSnapshotFromPage(element, page) {
       const { testPath, currentTestName, isNot, snapshotState } = this;
@@ -149,3 +149,5 @@ export function configureToMatchElementStyleSnapshotFromPage() {
     },
   };
 }
+
+module.export = { configureToMatchElementStyleSnapshotFromPage };
